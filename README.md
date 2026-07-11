@@ -37,6 +37,9 @@ python -m src.cli ^
 ```
 
 On shells that do not use `^` for line continuation, place the command on one line or use that shell's continuation syntax.
+```bash
+python -m src.cli --carrier-image inputs/checker.png --payload-image inputs/FeelsHackerMan.png --output-dir outputs/payload_carrier --carrier-wave checkerboard --carrier-tile-size 1 --payload-strength 18 --rgb-vector 0 1 0  --jpeg-quality 95 75 50 25 --overwrite
+```
 
 ## Outputs
 
