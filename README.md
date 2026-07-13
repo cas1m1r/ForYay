@@ -1,11 +1,6 @@
-<<<<<<< HEAD
-# ForYay - JPEG Payload Carrier
-This repository explores one idea: hiding a payload image inside high-frequency carrier noise, saving the result as JPEG, and using JPEG error as a reveal channel.
-
-=======
 # ForYay - JPEG Payload Carrier 
 I dug into JPEGs and wondered: could quantization of a high-frequency spatial pattern act like a carrier for a second, embedded image? Turns out yes — compression itself can act as a mask, and diffing the compressed image against its lossless original reveals a ghost of the second image, with fidelity that tracks JPEG quality. *(Caveat: decoding currently needs that lossless reference — it's more a lens into how quantization discards information than a drop-a-message-in-a-JPEG scheme.)*
->>>>>>> 36a4af4ef11ee928a99988a6da645d00c521f04a
+
 The core workflow is:
 
 1. Load a visible carrier image.
