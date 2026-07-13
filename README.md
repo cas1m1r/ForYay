@@ -1,4 +1,4 @@
-# ForYay - JPEG Payload Carrier 
+# ForYay - JPEG Payload Carrier
 This repository explores one idea: hiding a payload image inside high-frequency carrier noise, saving the result as JPEG, and using JPEG error as a reveal channel.
 
 The core workflow is:
@@ -25,7 +25,7 @@ python -m pip install numpy Pillow matplotlib pytest
 ```bash
 python -m src.cli ^
   --carrier-image inputs/checker.png ^
-  --payload-image inputs/FeelsHackerMan.png ^
+  --payload-image inputs/morty.png ^
   --output-dir outputs/payload_carrier ^
   --carrier-wave checkerboard ^
   --carrier-tile-size 1 ^
@@ -38,7 +38,7 @@ python -m src.cli ^
 
 On shells that do not use `^` for line continuation, place the command on one line or use that shell's continuation syntax.
 ```bash
-python -m src.cli --carrier-image inputs/checker.png --payload-image inputs/FeelsHackerMan.png --output-dir outputs/payload_carrier --carrier-wave checkerboard --carrier-tile-size 1 --payload-strength 18 --rgb-vector 0 1 0  --jpeg-quality 95 75 50 25 --overwrite
+python -m src.cli --carrier-image inputs/checker.png --payload-image inputs/morty.png --output-dir outputs/payload_carrier --carrier-wave checkerboard --carrier-tile-size 1 --payload-strength 18 --rgb-vector 0 1 0 --jpeg-quality 95 75 50 25 --overwrite
 ```
 
 ## Outputs
@@ -73,7 +73,7 @@ Green-heavy vectors usually affect luma strongly. Red/blue-opposed vectors tend 
 
 ## Python Entry Point
 
-The exploratory script [experiment_code/img_test.py](experiment_code/img_test.py) is intentionally left as a scratchpad. The supported public entry point is:
+The supported public entry point is:
 
 ```bash
 python -m src.cli
@@ -84,3 +84,7 @@ python -m src.cli
 ```bash
 python -m pytest
 ```
+
+## License
+
+MIT

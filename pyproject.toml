@@ -1,0 +1,14 @@
+[project]
+name = "foryay-transforms"
+version = "0.1.0"
+description = "Payload-in-carrier image experiments using JPEG error as a reveal channel."
+requires-python = ">=3.10"
+dependencies = [
+  "numpy",
+  "Pillow",
+  "matplotlib",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
