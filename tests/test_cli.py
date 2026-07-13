@@ -14,7 +14,7 @@ def test_cli_argument_parsing_for_payload_carrier() -> None:
             "--carrier-image",
             "inputs/checker.png",
             "--payload-image",
-            "inputs/FeelsHackerMan.png",
+            "inputs/morty.png",
             "--payload-strength",
             "14",
             "--rgb-vector",

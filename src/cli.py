@@ -19,7 +19,7 @@ def build_parser() -> argparse.ArgumentParser:
         )
     )
     parser.add_argument("--carrier-image", type=Path, default=Path("inputs") / "checker.png")
-    parser.add_argument("--payload-image", type=Path, default=Path("inputs") / "FeelsHackerMan.png")
+    parser.add_argument("--payload-image", type=Path, default=Path("inputs") / "morty.png")
     parser.add_argument("--output-dir", type=Path, default=Path("outputs") / "payload_carrier")
     parser.add_argument("--carrier-wave", choices=sorted(CARRIER_WAVES), default="checkerboard")
     parser.add_argument("--carrier-tile-size", type=int, default=1)
