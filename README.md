@@ -85,6 +85,32 @@ python -m src.cli
 python -m pytest
 ```
 
+
+## Demodulation/Decoding
+To see the payload image you can run this python code if you used the included checkerboard as the carrier (replacing your image file path on the first line after imports):
+```python
+import numpy as np
+import matplotlib.pyplot as plt
+from PIL import Image
+from scipy.fft import fft2, ifft2, fftshift, ifftshift
+import scipy.ndimage as ndi
+# The image input
+img = np.array(Image.open("YOUR_IMAGE_FILE.jpg").convert("RGB"))
+g = img[:, :, 1].astype(float)
+# Remove large-scale carrier image brightness.
+x = g - ndi.gaussian_filter(g, sigma=0.5)
+# reconstruct an image based on amplified differences of compressed image's discontinuities
+h, w = g.shape
+yy, xx = np.mgrid[:h, :w]
+checker = ((xx + yy) % 2) * 2 - 1  # -1/+1
+demod = x * checker
+payload_estimate = ndi.gaussian_filter(np.abs(demod), sigma=3)
+# take a peek
+plt.imshow(payload_estimate, cmap="gray")
+plt.title("Estimated payload envelope")
+plt.show()
+```
+
 ## License
 
 MIT
